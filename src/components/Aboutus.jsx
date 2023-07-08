@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import '../styles/Homepage.css';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const a1 = require('../images/Abt-us/a1.png');
-const a2 = require('../images/Abt-us/a2.png');
-const a3 = require('../images/Abt-us/a3.png');
+const a2 = require('../images/Abt-us/a2.webp');
+const a3 = require('../images/Abt-us/a3.webp');
 const a4 = require('../images/Abt-us/a4.png');
 const logoTransparent = require('../images/logo-transparent.png');
 

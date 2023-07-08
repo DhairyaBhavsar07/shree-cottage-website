@@ -13,23 +13,23 @@ export default function Ecard({ itineraries, activities }){
     const [expandedId, setExpandedId] = React.useState(0);
 
     const itinerariesPerCard = [{ _id: "1",
-                                    Eimg:require("../images/events/wed.png"),
+                                    Eimg:require("../images/events/wed.webp"),
                                     event:"Wedding",
                                     desc:"Create cherished memories with a picture-perfect wedding at Shree Cottages. Our experienced team will ensure every detail is flawlessly executed, making your special day truly magical." 
                                 }, 
                                 { _id: "2",
-                                    Eimg:require("../images/events/bday.png"),
+                                    Eimg:require("../images/events/bday.webp"),
                                     event:"Birthday Party",
                                     desc:"Celebrate your special day in style at Shree Cottages. From themed decorations to delectable treats, we'll create an unforgettable birthday experience tailored to your desires."
                                 }, 
                                 { _id: "3",
-                                    Eimg:require("../images/events/corp.png"),
+                                    Eimg:require("../images/events/corp.webp"),
                                     event:"Corporate Event",
                                     desc:"Host a successful and productive corporate event amidst the serene surroundings of Shree Cottages. Our state-of-the-art facilities and professional services guarantee a seamless and memorable experience." 
                                 },
                                 {
                                     _id:"4",
-                                    Eimg:require("../images/events/manag.png"),
+                                    Eimg:require("../images/events/manag.webp"),
                                     event:"Event Planning",
                                     desc:"Trust our expert event planners to bring your vision to life. Whether it's a grand gala or an intimate gathering, we will handle every aspect with precision and creativity, ensuring a remarkable event."
                                 }
