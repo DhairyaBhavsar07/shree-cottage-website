@@ -3,8 +3,8 @@ import { Box, Divider, Stack, Typography, Card, Button, useMediaQuery } from "@m
 import '../styles/Homepage.css';
 import { Link } from "react-router-dom";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-const gir = require('../images/gir.png');
-const diu = require('../images/diu.png');
+const gir = require('../images/gir.webp');
+const diu = require('../images/diu.webp');
 const map_spot = require('../images/map-spot.png');
 
 export default function Attractions(){
