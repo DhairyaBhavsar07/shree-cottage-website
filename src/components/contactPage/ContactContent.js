@@ -1,12 +1,12 @@
-import { Box, Container, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography, Button } from "@mui/material";
 import React, { useRef, useState } from "react";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
-import style from "../../styles/Contact.module.css";
-import fbContact from "../../assets/fb-Contact.png";
-import ytContact from "../../assets/yt-Contact.png";
-import instaContact from "../../assets/insta-Contact.png";
+//import style from "../../styles/Contact.module.css";
+//import fbContact from "../../assets/fb-Contact.png";
+//import ytContact from "../../assets/yt-Contact.png";
+//import instaContact from "../../assets/insta-Contact.png";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import "../../styles/Contact.css";
@@ -21,7 +21,7 @@ const ContactContent = () => {
     setrecaptchaValue(value);
   };
   const callValidation = () => {
-    if (recaptchaValue == "") {
+    if (recaptchaValue === "") {
       return true;
     } else {
       return false;
@@ -330,7 +330,7 @@ const ContactContent = () => {
             >
               Come over for coffee
             </Typography>
-            <a href="https://goo.gl/maps/JNyosQLb9TYTp1kg9" target="_blank"> 
+            <a href="https://goo.gl/maps/JNyosQLb9TYTp1kg9" target="_blank">
             <Box
               display="flex"
               flexDirection="row"
@@ -386,7 +386,7 @@ const ContactContent = () => {
               >
                 Contact us
               </Typography>
-              <a href="tel:9427424157">
+              <a href="tel:+919427424157">
               <Box
                 display="flex"
                 flexDirection="row"
@@ -414,8 +414,7 @@ const ContactContent = () => {
                 </Typography>
               </Box>
               </a>
-
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info@shreecottages.com" target="_blacnk">
+              <a href="mailto:info@shreecottages.com" target="_blacnk">
               <Box
                 display="flex"
                 flexDirection="row"
@@ -526,26 +525,35 @@ const ContactContent = () => {
               >
                 Contact us
               </Typography>
-              <Box display="flex" flexDirection="row" mt="3vw">
-                <CallOutlinedIcon mr={2} />
-                <Typography
-                  mt="1vw"
-                  ml="2vw"
-                  variant="h6"
-                  sx={{
-                    color: "#3D2521",
-                    letterSpacing: "0.07em",
-                    fontStyle: "normal",
-                    fontFamily: "Poppins",
-                    fontSize: "16px",
-                  }}
-                >
-                  +91 9427424157
-                </Typography>
-              </Box>
+              
+              <a href="tel:+919427424157" style={{ textDecoration: 'none', color: 'inherit' }}>
+                {/* Use 'tel' protocol to indicate a phone number link */}
+                <Box display="flex" flexDirection="row" mt="3vw">
+                  <CallOutlinedIcon style={{ color: 'black' }} mr={2} />
+                  {/* Set the color of the icon explicitly to black */}
+                  <Typography
+                    mt="1vw"
+                    ml="2vw"
+                    variant="h6"
+                    sx={{
+                      color: "#3D2521",
+                      letterSpacing: "0.07em",
+                      fontStyle: "normal",
+                      fontFamily: "Poppins",
+                      fontSize: "16px",
+                    }}
+                  >
+                    +91 9427424157
+                  </Typography>
+                </Box>
+              </a>
+
+
+            <a href="mailto:info@shreecottages.com" style={{ textDecoration: 'none', color: 'inherit' }} target="_blacnk">  
               <Box display="flex" flexDirection="row" mt="3vw">
                 <MailOutlineOutlinedIcon />
                 <Typography
+                  
                   ml="2vw"
                   variant="h6"
                   sx={{
@@ -559,6 +567,7 @@ const ContactContent = () => {
                   info@shreecottages.com
                 </Typography>
               </Box>
+            </a>
             </Box>
           </Grid>
 
@@ -587,6 +596,7 @@ const ContactContent = () => {
             >
               Come over for coffee
             </Typography>
+            <a href="https://goo.gl/maps/JNyosQLb9TYTp1kg9" style={{ textDecoration: 'none', color: 'inherit' }} target="_blank">
             <Box display="flex" flexDirection="row" mt="3vw">
               <PlaceOutlinedIcon />
               <Typography
@@ -602,6 +612,7 @@ const ContactContent = () => {
                 Gujarat, India 362150
               </Typography>
             </Box>
+            </a>
           </Grid>
 
           {/* Third Box */}

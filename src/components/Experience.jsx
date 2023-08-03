@@ -21,20 +21,60 @@ const diu = require('../images/exp/diu.png');
 const junagadh = require('../images/exp/junagadh.png');
 const map_spot = require('../images/map-spot.png');
 
+/*
+// Function to preload images
+const useImagePreload = (urls) => {
+    React.useEffect(() => {
+        urls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+        });
+    }, [urls]);
+};
+*/
+
 export default function Experience(){
     const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+
+    /*const imageUrls = [
+        AboutFLowerRight,
+        AboutUsTop,
+        AboutUsTopM,
+        AboutFlowerLeft,
+        header1,
+        header1M,
+        gir_jungle,
+        devaliya,
+        header2,
+        header2M,
+        jamjir,
+        k_b,
+        somnath,
+        tulsiShyam,
+        diu,
+        junagadh,
+        map_spot,
+    ];
+
+    
+    // Call the preloadImages function with the array of image URLs
+    useImagePreload(imageUrls);*/
+
     return(
         <Stack>
             <Helmet>
-                <title>Experiences - Shree Cottages</title>
-                <meta
-                    name="description"
-                    content="Tourist spots near Shree Cottages"
-                />
-                <meta 
-                    name="keywords"
-                    content="shree cottages,hotel,resort,gir,somanth, junagadh,Kankai & Banej,Jamjir Waterfall,TulsiShyam,diu,Devaliya Safari Park"
-                />
+                <title>Best Tourist Places Attractions to Visit In Sasan Gir with Family</title>
+                <meta name="description" content="Most Visited Tourist Places In Sasan Gir. 1. Gir Jungle Safari 2. Devaliya Safari Park 3. Jamjir Waterfall 4. Kankai & Banej 5. Somnath Temple 6. TulsiShyam 7. Diu 8. Junagadh"/>
+                <meta name="keywords"content="shree cottages,hotel,resort,tourist places,places to visit,attractions,gir national park,gir wildlife sanctuary,gir jungle safari, devaliya safari park, jamjir waterfall , kankai & banej, somnath temple, tulsishyam, diu, junagadh"/>
+                <meta name="robots" content="index, follow"/>
+                <meta name="canonical" content="https://shreecottages.com/best-places-to-visit-in-sasan-gir"/>
+                <meta name="image" content={gir_jungle} />
+
+                <meta name="og:title" content="Best Tourist Places Attractions to Visit In Sasan Gir with Family"/>
+                <meta property="og:site_name" content="Shree Cottgaes" />
+                <meta name="og:description" content="Most Visited Tourist Places In Sasan Gir. 1. Gir Jungle Safari 2. Devaliya Safari Park 3. Jamjir Waterfall 4. Kankai & Banej 5. Somnath Temple 6. TulsiShyam 7. Diu 8. Junagadh"/>
+                <meta name="og:image" content={gir_jungle} />
+                
             </Helmet>
             <Box sx={{
                 width:"100vw",
@@ -89,7 +129,7 @@ export default function Experience(){
                     width:"100%",
                     justifyContent:"center",
                 }}>
-                    <Box><img src={isSmallScreen?header1M:header1} style={{width:"100%",borderRadius:"10px"}}/></Box>
+                    <Box><img src={isSmallScreen?header1M:header1} alt="Sasan Gir Lion and Lioness" style={{width:"100%",borderRadius:"10px"}}/></Box>
                     <Box sx={{padding:{xs:"0vw 4vw",md:"0vw 10vw"}, position:"relative", top:{xs:"-3rem",md:"-3.55rem"},marginBottom:{xs:"-1rem",md:"0rem"}}}>
                         <Typography variant="h2" sx={{
                                                     alignSelf:"center", 
@@ -111,7 +151,7 @@ export default function Experience(){
                         justifyContent:"center",
                         margin:{xs:"0vw",md:"0vw 2vw 0vw 0vw"}
                     }}>
-                        <Box><img src={gir_jungle} style={{width:"100%"}}/></Box>
+                        <Box><img src={gir_jungle} alt="Lion In Gir Jungle" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -140,7 +180,7 @@ export default function Experience(){
                         width:"100%",
                         justifyContent:"center",
                     }}>
-                        <Box><img src={devaliya} style={{width:"100%"}}/></Box>
+                        <Box><img src={devaliya} alt="Devaliya Safari Park" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -171,7 +211,7 @@ export default function Experience(){
                     width:"100%",
                     justifyContent:"center",
                 }}>
-                    <Box><img src={isSmallScreen?header2M:header2} style={{width:"100%",borderRadius:"10px"}}/></Box>
+                    <Box><img src={isSmallScreen?header2M:header2} alt="gir jungle scene" style={{width:"100%",borderRadius:"10px"}}/></Box>
                     <Box sx={{padding:{xs:"0vw 4vw",md:"0vw 10vw"}, position:"relative", top:{xs:"-2rem",sm:"-6vw",md:"-3.55rem"}}}>
                         <Typography variant="h2" sx={{
                                                     alignSelf:"center", 
@@ -192,7 +232,7 @@ export default function Experience(){
                         justifyContent:"center",
                         margin:{xs:"0vw",md:"0vw 2vw 0vw 0vw"}
                     }}>
-                        <Box><img src={jamjir} style={{width:"100%"}}/></Box>
+                        <Box><img src={jamjir} alt="Jamjir Waterfall" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -220,7 +260,7 @@ export default function Experience(){
                         justifyContent:"center",
                         // margin:{xs:"0vw",md:"0vw 2vw"}
                     }}>
-                        <Box><img src={k_b} style={{width:"100%"}}/></Box>
+                        <Box><img src={k_b} alt="kankai and banej" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -250,7 +290,7 @@ export default function Experience(){
                         justifyContent:"center",
                         margin:{xs:"0vw",md:"0vw 2vw 0vw 0vw"}
                     }}>
-                        <Box><img src={somnath} style={{width:"100%"}}/></Box>
+                        <Box><img src={somnath} alt="Somnath Temple Drone Image" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -278,7 +318,7 @@ export default function Experience(){
                         justifyContent:"center",
                         // margin:{xs:"0vw",md:"0vw 2vw"}
                     }}>
-                        <Box><img src={tulsiShyam} style={{width:"100%"}}/></Box>
+                        <Box><img src={tulsiShyam} alt="tulsishyam" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -308,7 +348,7 @@ export default function Experience(){
                         justifyContent:"center",
                         margin:{xs:"0vw",md:"0vw 2vw 0vw 0vw"}
                     }}>
-                        <Box><img src={diu} style={{width:"100%"}}/></Box>
+                        <Box><img src={diu} alt="Diu Beach" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 
@@ -336,7 +376,7 @@ export default function Experience(){
                         justifyContent:"center",
                         // margin:{xs:"0vw",md:"0vw 2vw"}
                     }}>
-                        <Box><img src={junagadh} style={{width:"100%"}}/></Box>
+                        <Box><img src={junagadh} alt="mahabat maqbara junagadh" style={{width:"100%"}}/></Box>
                         <Box flexDirection="column" textAlign="left" sx={{
                                                                                 m:{xs:"0vw 4vw",md:"0vw 2vw"}, 
                                                                                 // display: {xs:"block", md:"flex"}, 

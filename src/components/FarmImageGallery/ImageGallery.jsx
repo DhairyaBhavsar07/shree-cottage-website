@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Stack, Typography, Button, ListItemButton, ListItemText,useMediaQuery,Divider } from "@mui/material";
-import { Link, Outlet,NavLink, useLocation } from "react-router-dom";
+import { Box, Typography, ListItemButton, ListItemText,useMediaQuery,Divider } from "@mui/material";
+import { Outlet,NavLink, useLocation } from "react-router-dom";
 
 // IMPORTING STYLES
 import "./ImageGallery.css";
@@ -11,12 +11,14 @@ import AboutFLowerRight from "../../assets/AboutFlowersRight.png";
 import AboutFlowerLeft from "../../assets/AboutFlowerLeft.png";
 import  AboutUsTopM from "../../images/TopImage.png"
 import { Helmet } from "react-helmet";
+//import Decoration2 from "../../assets/Decoration2.webp";
+import  ShreeGallery from "../../images/shree-gallery.jpg"
 
 const ImageGallery = () => {
 
   var currentUrl = useLocation().pathname;
 
-  if(currentUrl == "/gallery/videos")
+  if(currentUrl === "/gallery/videos")
   {
     currentUrl = "/gallery/images/all"
   }
@@ -34,15 +36,17 @@ const ImageGallery = () => {
       >
         <Helmet>
                 <title>Gallery - Shree Cottages</title>
-                <meta
-                    name="description"
-                    content="Images and videos of Shree Cottages"
-                />
-                <meta 
-                    name="keywords"
-                    content="shree cottages, hotel, resort"
-                />
-            </Helmet>
+                <meta name="description" content="Explore our captivating gallery of images and videos showcasing the scenic beauty of our resort and unforgettable events at Sasan Gir"/>
+                <meta name="keywords"content="shree cottages, shree Party Plot, hotel, resort , destination wedding"/>
+                <meta name="robots" content="index, follow"/>
+                <meta name="canonical" content="https://shreecottages.com/gallery/images/all"/>
+                <meta name="image" content={ShreeGallery} />
+
+                <meta name="og:title" content="Gallery - Shree Cottages"/>
+                <meta property="og:site_name" content="Shree Cottgaes" />
+                <meta name="og:description" content="Explore our captivating gallery of images and videos showcasing the scenic beauty of our resort and unforgettable events at Sasan Gir"/>
+                <meta name="og:image" content={ShreeGallery} />
+        </Helmet>
         <Box
           sx={{
             width: "100vw",

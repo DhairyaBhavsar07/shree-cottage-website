@@ -3,10 +3,10 @@ import { Box, Divider, Typography, Button, useMediaQuery} from "@mui/material";
 import { Link } from "react-router-dom";
 import '../styles/Homepage.css';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-const a1 = require('../images/Abt-us/a1.png');
+//const a1 = require('../images/Abt-us/a1.png');
 const a2 = require('../images/Abt-us/a2.png');
 const a3 = require('../images/Abt-us/a3.png');
-const a4 = require('../images/Abt-us/a4.png');
+//const a4 = require('../images/Abt-us/a4.png');
 const logoTransparent = require('../images/logo-transparent.png');
 
 export default function Aboutus(){
@@ -19,12 +19,12 @@ export default function Aboutus(){
             <Box sx={{width:{xs:"100%",lg:"50%"},display:"flex",flexDirection:"row",justifyContent:"center", alignItems:"center",p:{xs:'0vh', sm: '5vw',lg:'0vw'}}}>
                 {/* <img src={isSmallScreen?AboutImgM:AboutImg} style={{width:"100%"}}/> */}
                 <Box sx={{display:"flex", flexDirection:"column",alignItems:"flex-end",mr:{xs:"0.5rem",sm:"0.75rem"}}}>
-                    <img src={require('../images/Abt-us/a1.svg').default} style={{width:"70%",margin:isSmallScreen?"1rem 0rem":"1.5rem 0rem"}}/>
-                    <img src={a2} style={{width:"100%"}}/>
+                    <img src={require('../images/Abt-us/a1.svg').default} alt="70+ event per year" style={{width:"70%",margin:isSmallScreen?"1rem 0rem":"1.5rem 0rem"}}/>
+                    <img src={a2} alt="Cottages With Garden" style={{width:"100%"}}/>
                 </Box>
                 <Box sx={{display:"flex", flexDirection:"column", alignItems:"flex-start",ml:{xs:"0.5rem",sm:"0.75rem"}}}>
-                    <img src={a3} style={{width:"100%"}}/>
-                    <img src={require('../images/Abt-us/a4.svg').default} style={{width:"70%",margin:isSmallScreen?"1rem 0rem":"1.5rem 0rem"}}/>
+                    <img src={a3} alt="Sangeet Sandhya Decoration" style={{width:"100%"}}/>
+                    <img src={require('../images/Abt-us/a4.svg').default} alt="20,000 visitors per year" style={{width:"70%",margin:isSmallScreen?"1rem 0rem":"1.5rem 0rem"}}/>
                 </Box>
             </Box>
             <Box display="flex" flexDirection="column" sx={{width:{xs:"100%",lg:"50%"},mt:"-5vw",mr:{xs:"0px",lg:"5vw"}, backgroundImage:`url(${logoTransparent})`,backgroundRepeat:'no-repeat',backgroundSize:"contain", backgroundPositionX:"center"}}>
@@ -36,7 +36,7 @@ export default function Aboutus(){
                 <Typography variant="body1" sx={{m:"5vw 0vw"}}>
                 Shree Cottages & Party Plot is a remarkable destination wedding resort in the heart of Gir National Park. With its lush greenery and vibrant gardens, it provides a magical backdrop for any occasion. As guests enter, they are embraced by a tranquil ambiance that evokes a sense of peace, comfort, and happiness. Offering the best affordable price wedding resort in Gir, along with the expertise of the best event planners in Junagadh, Gujarat. Shree Cottages ensures an extraordinary experience for your special day. It's the perfect choice for those seeking top-notch wedding resorts in Gujarat.
                 </Typography>    
-                <Link to="/AboutUsMain" style={{textDecoration:"none", color: '#3D2521'}}><Button variant="contained">Read more <ArrowForwardIcon sx={{width:"1rem", ml:'0.5vw'}} /></Button></Link>
+                <Link to="/about" style={{textDecoration:"none", color: '#3D2521'}}><Button variant="contained">Read more <ArrowForwardIcon sx={{width:"1rem", ml:'0.5vw'}} /></Button></Link>
                 </Box>
             </Box>
         </Box>

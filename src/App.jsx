@@ -1,26 +1,36 @@
+import React, { lazy } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./components/Hompage";
-import CSlider from "./components/CSlider";
-import Review from "./components/Review";
+//import CSlider from "./components/CSlider";
+//import Review from "./components/Review";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, CssBaseline, Paper } from "@mui/material";
-import Ecard from "./components/Ecard";
-import Event from "./components/Event";
-import Experience from "./components/Experience";
-import Contact from "./components/contactPage/Contact";
-import AboutUsMain from "./components/AboutUsMain";
-import Room from "./components/Room";
-import ImageGallery from "./components/FarmImageGallery/ImageGallery";
+//import Ecard from "./components/Ecard";
+//import Event from "./components/Event";
+//import Experience from "./components/Experience";
+//import Contact from "./components/contactPage/Contact";
+//import AboutUsMain from "./components/AboutUsMain";
+
+//import Room from "./components/Room";
+import NotFound from "./components/NotFound";
+//import ImageGallery from "./components/FarmImageGallery/ImageGallery";
 import ImageGalleryView from "./components/FarmImageGallery/ImageGalleryView";
 import VideoGalleryView from "./components/FarmImageGallery/VideoGalleryView";
-import { BrowserRouter as Router, Routes, Route, redirect} from "react-router-dom";
-import ScrollToTop from "./SmoothScroll";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+//import ScrollToTop from "./SmoothScroll";
 import SmoothScroll from "./SmoothScroll";
-import { Helmet } from "react-helmet";
+//import { Helmet } from "react-helmet";
 //import ReactGA from 'react-ga';
 import TagManager from "react-gtm-module";
+
+const AboutUsMain = lazy(() => import("./components/AboutUsMain"));
+const Room = lazy(() => import("./components/Room"));
+const Event = lazy(() => import("./components/Event"));
+const Experience = lazy(() => import("./components/Experience"));
+const Contact = lazy(() => import("./components/contactPage/Contact"));
+const ImageGallery = lazy(() => import("./components/FarmImageGallery/ImageGallery"));
 
 //const TRACKING_ID = "G-F89GGM6Z6K";
 //ReactGA.initialize(TRACKING_ID);
@@ -300,13 +310,19 @@ function App() {
               <Route
                 exact
                 path="/about"
-                element={<AboutUsMain />}
+                element={
+                <React.Suspense fallback='Loading...'>
+                  <AboutUsMain />
+                  </React.Suspense>
+                  }
               />
 
               <Route
                 exact
                 path="/gallery"
-                element={<ImageGallery />}
+                element={<React.Suspense fallback='Loading...'>
+                <ImageGallery />
+                </React.Suspense>}
               >
 
                 
@@ -320,7 +336,7 @@ function App() {
 
                   <Route
                     exact
-                    path="/gallery/videos"
+                    path="/gallery/videos/"
                     element={<VideoGalleryView />}
                   />
 
@@ -358,29 +374,38 @@ function App() {
               <Route
                 exact
                 path="/wedding-event-planning"
-                element={<Event />}
+                element={<React.Suspense fallback='Loading...'>
+                <Event />
+                </React.Suspense>}
               />
 
               <Route
                 exact
                 path="/rooms"
-                element={<Room />}
+                element={<React.Suspense fallback='Loading...'>
+                <Room />
+                </React.Suspense>}
               />
 
               <Route
                 exact
                 path="/best-places-to-visit-in-sasan-gir"
-                element={<Experience />}
+                element={<React.Suspense fallback='Loading...'>
+                <Experience />
+                </React.Suspense>}
               />
 
               <Route
                 exact
                 path="/contact"
-                element={<Contact />}
+                element={<React.Suspense fallback='Loading...'>
+                <Contact />
+                </React.Suspense>}
               />
 
-              
+            <Route exact path="*" element={<NotFound />} />
             </Routes>
+            
             </SmoothScroll>
         {/* </Router> */}
           {/* <Homepage /> */}

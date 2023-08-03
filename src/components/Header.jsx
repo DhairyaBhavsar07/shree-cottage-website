@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 // import { makeStyles } from "@material-ui/core";
-import { AppBar, Box, Grid, Toolbar, Stack, Container, Hidden, Typography, Menu, MenuItem, IconButton, SwipeableDrawer, Divider, List, ListItem, Avatar, ListItemButton, ListItemText, Button } from "@mui/material";
+import { AppBar, Box, Grid, Toolbar, Stack, Container, Hidden, Typography, Menu, MenuItem, IconButton, SwipeableDrawer, List, ListItemButton, ListItemText, Button } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import CallIcon from '@mui/icons-material/Call';
@@ -12,7 +12,7 @@ import '../styles/Header.css';
 const fbContact = require("../assets/fb-Contact.png");
 const ytContact = require("../assets/yt-Contact.png");
 const instaContact = require("../assets/insta-Contact.png");
-const logo = require('../images/logo.png');
+//const logo = require('../images/logo.png');
 
 export default function Header(props) {
   const [open, setOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function Header(props) {
 
       <Container maxWidth="100vw" sx={{ p: { md: "0vw 1vw", lg: "0vw 10vw" }, m: "0", width: "100vw" }}>
         <Toolbar disableGutters>
-          <Box className="logo"><Link to="/" style={{cursor:'pointer'}}><img src={require('../images/logo.svg').default} alt="" /></Link></Box>
+          <Box className="logo"><Link to="/" style={{cursor:'pointer'}}><img src={require('../images/logo.svg').default} alt="Shree cottages logo black" /></Link></Box>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Hidden mdDown>
               <NavLink to="/" className={({ isActive }) => (isActive ? "link-active" : "link")} style={{ padding: "0", justifyContent: "center", textDecoration: "none", color: '#3D2521' }}><ListItemButton><ListItemText disableTypography className="list">Home</ListItemText></ListItemButton></NavLink>
