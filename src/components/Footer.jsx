@@ -20,7 +20,7 @@ export default function Footer(){
             <Grid container direction={"column"}>
                 <img src={require('../images/logo-white.svg').default} alt="Shree Cottages Logo White" className="logo-white"/>
                 <Typography variant="body2" sx={{display:{xs:"none",md:"block"},fontSize:{md:'1.2vw',lg:'1vw'}, mb:'1vw', mt:'1.5vw'}}>
-                    Shree Cottages offers a serene and enchanting getaway nestled in the heart of Gir National Park. With comfortable accommodations, lush gardens, and exceptional service, it is the perfect destination for weddings, events, and peaceful retreats.
+                    Shree Cottages & Party Plot offers a serene and enchanting getaway nestled in the heart of Gir National Park. With comfortable accommodations, lush gardens, and exceptional service, it is the perfect destination for weddings, events, and peaceful retreats.
                 </Typography>
                 <Grid direction='row' sx={{m:'0.5vw 0vw'}}>
                     <img src={require('../images/fb.svg').default} alt="Facebook Icon" className="sns" style={{cursor:"pointer"}} onClick={()=> window.open("https://www.facebook.com/ShreeCottages","_blank")}/>
@@ -48,8 +48,9 @@ export default function Footer(){
                         <Box display="flex" flexDirection={"column"}>
                             <Link to="/gallery/images/all"><Typography variant="h6" sx={{ color: 'warning.main', mt: '1.2vw', fontSize: { xs: "1rem", md: "1.3vw" } }}>Gallery</Typography></Link>
                             <Link to="/best-places-to-visit-in-sasan-gir"><Typography variant="h6" sx={{ color: 'warning.main', mt: '1.2vw', fontSize: { xs: "1rem", md: "1.3vw" } }}>Experience</Typography></Link>
+                            <Link to="/blogs"><Typography variant="h6" sx={{ color: 'warning.main', mt: '1.2vw', fontSize: { xs: "1rem", md: "1.3vw" } }}>Blogs</Typography></Link>
                             <Link to="/contact"><Typography variant="h6" sx={{ color: 'warning.main', mt: '1.2vw', fontSize: { xs: "1rem", md: "1.3vw" } }}>Contact Us</Typography></Link>
-                            <Link to="/"><Typography variant="h6" sx={{ color: 'warning.main', mt: '1.2vw', fontSize: { xs: "1rem", md: "1.3vw" } }}>Resrvation Policy</Typography></Link>
+                            
                         </Box>
                     </Box>
                 </Grid>
