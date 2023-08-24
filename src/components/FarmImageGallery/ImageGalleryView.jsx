@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, location } from "react";
 import {
   Box,
   Grid,
@@ -26,6 +26,7 @@ import Decoration1 from "../../assets/Decoration1.png";
 import Decoration2 from "../../assets/Decoration2.webp";
 
 import SwimmingPool from "../../assets/SwimmingPool1.png";
+import { LensTwoTone } from "@mui/icons-material";
 
 const ImageGalleryView = () => {
   //IMAGE ARRAY TO TEST
@@ -67,6 +68,84 @@ const ImageGalleryView = () => {
     swimmingPool,
   ];
 
+  const [imag, setimag] = useState(null);
+
+  useEffect(() => {
+    const fun = async () => {
+      let data = await fetch('http://127.0.0.1:8000/api/v1/getImage');
+      data = await data.json();
+      setimag(data.data);
+      console.log('data', data);
+    }
+    fun();
+  }, [])
+
+
+  useEffect(() => {
+    for (var i = num; i > num - 17; i--) {
+      if (currentUrl[i] !== "/") {
+        part = currentUrl.slice(i + 1);
+      } else {
+        part = currentUrl.slice(i + 1);
+        break;
+      }
+    }
+
+    console.log('meow');
+
+    if (part === "all") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    }
+    else if (part === "resort") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage?index=1');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    } else if (part === "decoration") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage?index=2');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    } else if (part === "banquest-hall") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage?index=3');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    } else if (part === "conference-room") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage?index=4');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    } else if (part === "swimming-pool") {
+      const fun = async () => {
+        let data = await fetch('http://127.0.0.1:8000/api/v1/getImage?index=5');
+        data = await data.json();
+        setimag(data.data);
+        console.log('data', data);
+      }
+      fun();
+    }
+  }, [useLocation().pathname])
+
+
   var images = all;
 
   const currentUrl = useLocation().pathname;
@@ -75,28 +154,29 @@ const ImageGalleryView = () => {
   // useEffect(() => {
   var part;
 
-  for (var i = num; i > num - 17; i--) {
-    if (currentUrl[i] !== "/") {
-      part = currentUrl.slice(i + 1);
-    } else {
-      part = currentUrl.slice(i + 1);
-      break;
-    }
-  }
+  // for (var i = num; i > num - 17; i--) {
+  //   if (currentUrl[i] !== "/") {
+  //     part = currentUrl.slice(i + 1);
+  //   } else {
+  //     part = currentUrl.slice(i + 1);
+  //     break;
+  //   }
+  // }
 
-  if (part === "all") {
-    images = newImages[0];
-  } else if (part === "resort") {
-    images = newImages[1];
-  } else if (part === "decoration") {
-    images = newImages[2];
-  } else if (part === "banquest-hall") {
-    images = newImages[3];
-  } else if (part === "conference-room") {
-    images = newImages[4];
-  } else if (part === "swimming-pool") {
-    images = newImages[5];
-  }
+  // if (part === "all") {
+  //   // images = newImages[0];
+
+  // } else if (part === "resort") {
+  //   images = newImages[1];
+  // } else if (part === "decoration") {
+  //   images = newImages[2];
+  // } else if (part === "banquest-hall") {
+  //   images = newImages[3];
+  // } else if (part === "conference-room") {
+  //   images = newImages[4];
+  // } else if (part === "swimming-pool") {
+  //   images = newImages[5];
+  // }
 
   // })
 
@@ -184,7 +264,7 @@ const ImageGalleryView = () => {
                 color: "#3D2521",
                 width: "auto",
               }}
-              
+
             >
               <ListItemButton>
                 <ListItemText disableTypography className="resortPartList">
@@ -283,9 +363,9 @@ const ImageGalleryView = () => {
           rowSpacing={{ xs: 2, sm: 2, md: 2 }}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
 
-          // columnSpacing={{ xs: 1, sm: 4, md: 6 }}
+        // columnSpacing={{ xs: 1, sm: 4, md: 6 }}
         >
-          {images.map((image, index) => (
+          {imag && imag.map((image, index) => (
             <Grid item xs={16} sm={4} md={4}>
               <Box
                 sx={{
@@ -294,7 +374,7 @@ const ImageGalleryView = () => {
                 }}
               >
                 <img
-                  src={image}
+                  src={image.path}
                   style={{
                     width: "100%",
                     height: "100%",
