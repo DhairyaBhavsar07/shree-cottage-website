@@ -72,7 +72,8 @@ const ImageGalleryView = () => {
 
   useEffect(() => {
     const fun = async () => {
-      let data = await fetch('http://13.233.31.166:8000/api/v1/getImage');
+      let data = await fetch('http://13.233.31.166:8000/api/v1/getImage',{ method: 'GET',
+      mode: 'cors'});
       data = await data.json();
       setimag(data.data);
       console.log('data', data);
@@ -95,7 +96,8 @@ const ImageGalleryView = () => {
 
     if (part === "all") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
@@ -104,7 +106,8 @@ const ImageGalleryView = () => {
     }
     else if (part === "resort") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=1');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=1',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
@@ -112,7 +115,8 @@ const ImageGalleryView = () => {
       fun();
     } else if (part === "decoration") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=2');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=2',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
@@ -120,7 +124,8 @@ const ImageGalleryView = () => {
       fun();
     } else if (part === "banquest-hall") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=3');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=3',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
@@ -128,7 +133,8 @@ const ImageGalleryView = () => {
       fun();
     } else if (part === "conference-room") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=4');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=4',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
@@ -136,7 +142,8 @@ const ImageGalleryView = () => {
       fun();
     } else if (part === "swimming-pool") {
       const fun = async () => {
-        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=5');
+        let data = await fetch('http://13.233.31.166:8000/api/v1/getImage?index=5',{ method: 'GET',
+        mode: 'cors'});
         data = await data.json();
         setimag(data.data);
         console.log('data', data);
