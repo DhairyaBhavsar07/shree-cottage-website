@@ -11,7 +11,7 @@ const VideoGalleryView = () => {
 
   useEffect(() => {
     const getVideo = async () => {
-      let res = await fetch("http://127.0.0.1:8000/api/v1/getvideo");
+      let res = await fetch("http://13.233.31.166:8000/api/v1/getvideo");
       res = await res.json();
       setvideos(res.data);
     };
