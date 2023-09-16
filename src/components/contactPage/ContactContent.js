@@ -42,7 +42,7 @@ const ContactContent = () => {
     let nu = number;
     let m = message;
 
-    await fetch('http://127.0.0.1:8000/api/v1/contact', {
+    await fetch('https://13.233.31.166:8000/api/v1/contact', {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       headers: {
